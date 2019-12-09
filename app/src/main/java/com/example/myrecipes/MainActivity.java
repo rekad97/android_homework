@@ -8,7 +8,7 @@ import com.example.myrecipes.adapter.RecipeAdapter;
 import com.example.myrecipes.data.RecipeItem;
 import com.example.myrecipes.fragments.NewRecipeItem;
 
-import com.example.myrecipes.fragments.OneItemPage;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.orm.SugarContext;
@@ -25,11 +25,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OneItemPage.OneItemPageDialogListener,  NewRecipeItem.NewRecipeItemDialogListener, RecipeAdapter.RecipeItemClickListener {
+public class MainActivity extends AppCompatActivity implements   NewRecipeItem.NewRecipeItemDialogListener, RecipeAdapter.RecipeItemClickListener {
 
     private RecyclerView recyclerView;
     private RecipeAdapter adapter;
@@ -100,38 +101,12 @@ public class MainActivity extends AppCompatActivity implements OneItemPage.OneIt
     }
     @Override
     public void onItemClick(int position) {
-       /* Log.d(TAG,"onItemClick:clicked");
 
-        Intent intent = new Intent(this, OneItemPage.class);
-
-
-
-        startActivity(intent);
-
-
-          View contentView = LayoutInflater.from(this).inflate(R.layout.one_page_item, null);
-        TextView name = contentView.findViewById(R.id.RecipeName);
-        name.setText(item.getName());
-        TextView ingredients = contentView.findViewById(R.id.RecipeIngredients);
-        ingredients.setText(item.getIngredients());
-        TextView description = contentView.findViewById(R.id.RecipeDescription);
-        description.setText(item.getDescription());
-        TextView time = contentView.findViewById(R.id.RecipeTime);
-        time.setText(item.getTime());*/
     }
 
 
     public void onItemChanged(final RecipeItem item) {
 
-        View contentView = LayoutInflater.from(this).inflate(R.layout.one_page_item, null);
-        TextView name = contentView.findViewById(R.id.RecipeName);
-        name.setText(item.getName());
-        TextView ingredients = contentView.findViewById(R.id.RecipeIngredients);
-        ingredients.setText(item.getIngredients());
-        TextView description = contentView.findViewById(R.id.RecipeDescription);
-        description.setText(item.getDescription());
-        TextView time = contentView.findViewById(R.id.RecipeTime);
-        time.setText(item.getTime());
     }
 
     @Override

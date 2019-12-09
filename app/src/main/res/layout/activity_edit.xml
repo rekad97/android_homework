@@ -4,13 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/navy">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/navy">
 
 
         <EditText
@@ -69,31 +66,41 @@
 
         <EditText
             android:id="@+id/RecipeEditTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginLeft="108dp"
-            android:layout_marginTop="668dp"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginLeft="128dp"
+            android:layout_marginTop="664dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:textColor="@color/darker_navy"
             android:gravity="center"
+            android:inputType="textPersonName"
             android:text="Time"
+            android:textColor="@color/darker_navy"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="62dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/RecipeEditTime"
+            app:layout_constraintTop_toBottomOf="@+id/RecipeEditDescription"
+            app:srcCompat="@drawable/time" />
+
         <Button
             android:id="@+id/RecipeEditButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="304dp"
-            android:layout_marginLeft="304dp"
-            android:layout_marginTop="17dp"
-            android:text="Update"
-            android:onClick="UpdateRecipe"
+            android:layout_marginStart="300dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="8dp"
             android:background="@color/darker_navy"
+            android:onClick="UpdateRecipe"
+            android:text="Update"
             android:textColor="@color/navy"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/RecipeEditDescription" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list_item"
     android:layout_width="match_parent"
@@ -8,10 +9,11 @@
     android:paddingBottom="8dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="8dp">
+    android:paddingTop="8dp"
+    android:background="@color/navy">
 
 
-    <ImageView
+    <ImageButton
         android:id="@+id/RecipeItemIconImageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -21,7 +23,8 @@
         android:layout_marginBottom="10dp"
         android:contentDescription="icon"
         android:padding="10dp"
-        tools:src="@mipmap/fork_knife" />
+        tools:src="@mipmap/fork_knife"/>
+
 
     <LinearLayout
         android:layout_width="0dp"
@@ -31,26 +34,23 @@
         android:padding="20dp"
         android:orientation="vertical">
 
+
+
         <TextView
             android:id="@+id/RecipeNameInList"
             android:layout_width="153dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/recipe_name"
-            android:textColor="@color/dark_red"
+            android:textColor="@color/darker_navy"
+            android:textStyle="bold"
+
             android:textSize="54px" />
+
 
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/RecipeItemEditButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical"
-        android:scaleType="fitXY"
-        android:src="@mipmap/edit" />
     <ImageButton
         android:id="@+id/RecipeItemRemoveButton"
         style="@style/Widget.AppCompat.Button.Borderless"
