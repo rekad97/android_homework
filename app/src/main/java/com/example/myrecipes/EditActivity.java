@@ -2,11 +2,15 @@ package com.example.myrecipes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.myrecipes.data.RecipeItem;
 
 public class EditActivity extends AppCompatActivity {
     TextView recipeName;
@@ -14,7 +18,7 @@ public class EditActivity extends AppCompatActivity {
     TextView recipeIngredients;
     TextView recipeTime;
     ImageView recipeImage;
-
+RecipeItem recipeItem = new RecipeItem();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,27 @@ public class EditActivity extends AppCompatActivity {
         }
     }
     public void UpdateRecipe(View view){
+        String name = recipeName.getText().toString().trim();
+        String ingredients = recipeIngredients.getText().toString().trim();
+        String description = recipeDescription.getText().toString().trim();
+        String time = recipeTime.getText().toString().trim();
+
+        recipeItem.setName(name);
+        recipeItem.setIngredients(ingredients);
+        recipeItem.setDescription(description);
+        recipeItem.setTime(time);
+
+        recipeItem.save();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+        Context context = getApplicationContext();
+        CharSequence text = "Hello toast!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+
 
     }
+
 }

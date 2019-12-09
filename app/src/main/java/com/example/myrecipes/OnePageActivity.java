@@ -52,29 +52,6 @@ public class OnePageActivity extends AppCompatActivity {
 
     }
 
-    public void UpdateRecipe(View view){
-        String name = recipeName.getText().toString().trim();
-        String ingredients = recipeIngredients.getText().toString().trim();
-        String description = recipeDescription.getText().toString().trim();
-        String time = recipeTime.getText().toString().trim();
-
-    recipeItem.setName(name);
-    recipeItem.setIngredients(ingredients);
-    recipeItem.setDescription(description);
-    recipeItem.setTime(time);
-
-    recipeItem.save();
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-
-        Context context = getApplicationContext();
-        CharSequence text = "Hello toast!";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
-
-    }
 
 
 }
